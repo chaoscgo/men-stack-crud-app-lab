@@ -3,19 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= book.title %></title>
 </head>
 <body>
-    <h1><%= book.title %></h1>
-    <% if (book.recommendation) { %>
-        <p>This book is recommended!</p>
-    <% } else { %>
-        <p> This book is not recommended!</p>
-    <% } %>
-    <form action="/books/<%=book._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%=book.title %></button>
-    </form>
-    <a href="/books/<%=book._id %>/edit">Edit <%=book.title %></a>
-    <a href="/books/">Back to Books</a>
+    <div class="book-details">
+        <h1><%= book.title %></h1>
+        <% if (book.recommendation) { %>
+            <p>This book is recommended!</p>
+        <% } else { %>
+            <p> This book is not recommended!</p>
+        <% } %>
+        <div class="book-actions">
+          <form 
+            class="delete-form"
+            action="/books/<%=book._id%>?_method=DELETE" method="POST"
+        >
+          <button class="delete-button" type="submit">
+            Delete <%=book.title %>
+          </button>
+        </form>
+        <a class="edit-link" href="/books/<%=book._id %>/edit">
+            <div class="edit-text">Edit <%=book.title %></div>
+        </a>
+    </div>
+    <a class="books-index-link" href="/books">
+        <div class="index-link-text">Back to Books</div>
+    </a>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Enter a Book</title>
 </head>
 <body>
@@ -18,7 +19,7 @@
             <input type="text" name="author" id="author" />
         </div>
         <br>
-        <div>
+        <div class="checkbox-div">
             <label for="recommendation">Recommend?</label>
             <input type="checkbox" name="recommendation" id="recommendation" />
         </div>
@@ -26,6 +27,8 @@
         <button type="submit">Add Book</button>
     </form>
 
-    <a href="/books">Back to Books</a>
+    <a class="books-index-link" href="/books">
+        <div class="index-link-text">Back to Books</div>
+    </a>
 </body>
 </html>
