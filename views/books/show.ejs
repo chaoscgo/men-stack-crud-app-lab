@@ -9,6 +9,7 @@
 <body>
     <div class="book-details">
         <h1><%= book.title %></h1>
+        <h2>By: <%= book.author %></h2>
         <% if (book.recommendation) { %>
             <p>This book is recommended!</p>
         <% } else { %>
